@@ -1,0 +1,40 @@
+#!/bin/bash
+#
+# Brightness Control for debian systems
+# Author: Federico Cañellas
+# Email: federico.leandro.c@gmail.com
+# Git: https://github.com/federicoleandroc/brightness-control
+
+brightness_folder="/sys/class/backlight/acpi_video0";
+brightness_max=$(cat ${brightness_folder}/max_brightness)
+brightness="${brightness_folder}/brightness"
+
+function show_help {
+  echo "Brightness Controll 1.0"
+  echo -e "\nWrote by Federico Cañellas"
+  echo "Email: federico.leandro.c@gmail.com"
+  echo "Project URL: https://github.com/federicoleandroc/brightness-control"
+  echo -e "\nUsage: brightness-control [[i|install]|brightness percent(1~100)|[h|help]]"
+  echo "- number in range 1~100: Set brightness percent."
+  echo "- h|help:                Show help menu."
+  echo "- i|install:             Install this file at /usr/bin folder. (Only works once.)"
+}
+
+function writeBrightness {
+  echo $1 > $brightness
+}
+
+function setBrightness {
+  # check range
+  if [ $1 -gt 0 ] && [ $1 -lt 101 ] ; then
+    writeBrightness $(( ($1  * $brightness_max) / 100 ))
+  else
+    echo "[Error] brightness out of range 0~100!"
+  fi
+}
+
+# process options
+case $1 in
+  [0-9]*) setBrightness $1;;
+  "h"|"help"|"-h"|"--help"|*) show_help;;
+esac
