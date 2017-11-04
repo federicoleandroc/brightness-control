@@ -2,8 +2,7 @@
 A debian based system tool for brightness controll.
 
 # Install
-sudo chmod 666 /sys/class/backlight/acpi_video0/brightness
-sudo cp brightness-control /usr/bin/brightness-control
+Run 'install' file with sudo.
 
 # Usage
 
