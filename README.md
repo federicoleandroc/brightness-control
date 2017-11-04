@@ -6,5 +6,5 @@ Run 'install' file with sudo.
 
 # Usage
 
-"brightness-control h" for help.
-"brightness-control x" for set brightness, where x is and integer from 1 to 100.
+"<b>brightness-control h</b>" for help. <br>
+"<b>brightness-control x</b>" for set brightness, where x is and integer from 1 to 100.
