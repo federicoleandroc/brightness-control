@@ -10,7 +10,7 @@ brightness_max=$(cat ${brightness_folder}/max_brightness)
 brightness="${brightness_folder}/brightness"
 
 function show_help {
-  echo "Brightness Controll 1.0"
+  echo "Brightness Controll 0.1"
   echo -e "\nWrote by Federico Cañellas"
   echo "Email: federico.leandro.c@gmail.com"
   echo "Project URL: https://github.com/federicoleandroc/brightness-control"
