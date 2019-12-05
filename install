@@ -1,5 +1,6 @@
 #!/bin/bash
-chmod 666 /sys/class/backlight/acpi_video0/brightness && \
+card_folder="intel_backlight"
+chmod 666 /sys/class/backlight/${card_folder}/brightness && \
 cp ./brightness-control /usr/bin/brightness-control && \
 
 echo "Brightness Controll installed at: /usr/bin/brightness-control"
